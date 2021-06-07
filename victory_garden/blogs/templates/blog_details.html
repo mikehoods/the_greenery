@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}The Victory Garden | {{ post.title }} {% endblock %}
+
+{% block content %}
+
 <h1>{{ post.title }}</h1>
 <h2>By: {{ post.author.first_name }} {{ post.author.last_name }}</h2>
 <h3>{{ post.date }}</h3>
@@ -7,3 +12,5 @@
 
 <br/><br/>
 <a href="{% url 'home' %}">Back</a>
+
+{% endblock %}
