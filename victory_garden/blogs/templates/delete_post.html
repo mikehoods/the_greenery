@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}VG | Delete Blog Post{% endblock %}
+{% block content %}
+
+<h1>Delete Post</h1>
+<h3>Delete: {{ post.title }}</h3>
+
+<div class="post-form">
+    <form method="POST">
+        {% csrf_token %}
+        <strong>Are you sure?</strong>
+        <button>Delete Post</button>
+</div>
+
+{% endblock %}
