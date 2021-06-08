@@ -38,7 +38,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'victory_garden.urls'
+ROOT_URLCONF = 'greenery.urls'
 
 TEMPLATES = [
     {
@@ -56,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'victory_garden.wsgi.application'
+WSGI_APPLICATION = 'greenery.wsgi.application'
 
 
 # Database
