@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
-{% block title %}VG | Edit Blog Post{% endblock %}
+{% block title %}The Greenery | Edit Post{% endblock %}
 {% block content %}
 
-<h1>Edit Post</h1>
-
-<div class="post-form">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button>Edit Post</button>
-</div>
+{% if user.is_authenticated %}
+    <h1>Edit Post</h1>
+    <div class="post-form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Edit Post</button>
+    </div>
+{% else %}
+    <h2>Unauthorized: Please login in to continue.</h2>
+{% endif %}
 
 {% endblock %}
