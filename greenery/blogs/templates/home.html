@@ -2,19 +2,20 @@
 
 {% block content %}
 
-<h1>Hello Gardeners!</h1>
-    <ul>
+    <div class="blog-list">
         {% for post in object_list %}
-        <li>
-            <a href="{% url 'blog-detail' post.pk %}">{{ post.title }}</a> - Written by {{ post.author.first_name }} {{ post.author.last_name }} - {{ post.date }}
+        <div class="blog-preview">
+            <a href="{% url 'blog-detail' post.pk %}">{{ post.title }}</a> 
             {% if user.is_authenticated %}
-                <a href="{% url 'edit-post' post.pk %}">Edit</a>
-                <a href="{% url 'delete-post' post.pk %}">Delete</a>
+                <div>
+                    <a href="{% url 'edit-post' post.pk %}">Edit</a>
+                    <a href="{% url 'delete-post' post.pk %}">Delete</a>
+                </div>
             {% endif %}
-            <br/>           
+            <p>By {{ post.author.first_name }} {{ post.author.last_name }}</p>      
             {{ post.snippet }}
-        </li>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 
 {% endblock %}

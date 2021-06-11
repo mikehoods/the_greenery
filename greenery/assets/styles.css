@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Oxygen:wght@300;400;700&display=swap');
+
+body{
+    background: linear-gradient(to bottom right, #FAF2DA, #e28f83 85%);
+    color: #181818;
+    margin: 0;
+    font-family: 'Cantarell', sans-serif;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: #4a503d;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8e9775;
+    padding: 0 12px;
+    font-family: 'Oxygen', sans-serif;
+}
+header a{
+    color: whitesmoke;
+}
+header nav a{
+    padding: 6px;
+}
+header nav a:hover{
+    color: #4a503d;
+}
+/* home.html styling */
+.blog-list{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-rows: 5fr 5fr;
+    row-gap: 40px;
+}
+.blog-preview{
+    list-style-type: none;
+    background-color: whitesmoke;
+    padding: 10px;
+    margin: 10px;
+    min-height: 100%;
+    
+}

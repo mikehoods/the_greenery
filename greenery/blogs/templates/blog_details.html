@@ -12,9 +12,9 @@
 {% endif %}
 <hr>
 <br/>
-{{ post.body|safe }}
+<p>{{ post.body|safe }}</p>
 
-<br/><br/>
+<br/>
 <a href="{% url 'home' %}">Back</a>
 
 {% endblock %}
