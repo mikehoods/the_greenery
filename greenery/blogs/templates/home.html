@@ -2,18 +2,19 @@
 
 {% block content %}
 
-    <div class="blog-list">
+    <div class="post-list">
         {% for post in object_list %}
-        <div class="blog-preview">
-            <a href="{% url 'blog-detail' post.pk %}">{{ post.title }}</a> 
+        <div class="post-preview">
+            <h1><a href="{% url 'blog-detail' post.pk %}">{{ post.title }}</a></h1>
+            <p class="post-byline">By {{ post.author.first_name }} {{ post.author.last_name }}</p>
+            <p class="post-snippet">{{ post.snippet }}</p>
             {% if user.is_authenticated %}
-                <div>
+                <div class="post-admin-links">
                     <a href="{% url 'edit-post' post.pk %}">Edit</a>
                     <a href="{% url 'delete-post' post.pk %}">Delete</a>
                 </div>
-            {% endif %}
-            <p>By {{ post.author.first_name }} {{ post.author.last_name }}</p>      
-            {{ post.snippet }}
+            {% endif %}    
+            
             </div>
         {% endfor %}
     </div>

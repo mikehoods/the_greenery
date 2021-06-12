@@ -29,18 +29,109 @@ header nav a:hover{
     color: #4a503d;
 }
 /* home.html styling */
-.blog-list{
+.post-list{
     margin: 10px;
+    padding-bottom: 12px;
     display: grid;
     grid-template-columns: 3fr 3fr 3fr;
-    grid-template-rows: 5fr 5fr;
+    grid-template-rows: 4fr 4fr;
     row-gap: 40px;
 }
-.blog-preview{
+.post-preview{
     list-style-type: none;
     background-color: whitesmoke;
     padding: 10px;
     margin: 10px;
     min-height: 100%;
+    position: relative;
+    box-sizing: border-box;
     
+}
+.post-preview h1, .post-preview h2, .post-preview h3{
+    margin: 0;
+}
+.post-preview .post-byline{
+    margin-top: 0;
+}
+.post-preview .post-admin-links{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+.post-preview .post-admin-links a{
+    padding: 2px;
+}
+.post-preview .post-admin-links a:hover{
+    text-decoration: underline;
+}
+
+/* blog_details.html styling */
+.post-preview .post-body{
+    padding: 10px;
+    text-align: justify;
+}
+.post-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #4a503d;
+}
+.post-header-info h1{
+    color: #4a503d;
+}
+.details-admin-links a{
+    padding: 2px;
+}
+.details-admin-links a:hover{
+    text-decoration: underline;
+}
+
+/* forms styling */
+.post-form-div{
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: whitesmoke;
+    padding: 12px;
+}
+.post-form-div h1{
+    color: #4a503d;
+    text-align: center;
+}
+.post-form{
+    width: 100%;
+}
+.post-form input, .post-form textarea, .post-form select{
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #8e9775;
+    font-size: 16px;
+}
+.post-form .form-button-div{
+    text-align: center;
+}
+.post-form .form-button{
+    background-color: #8e9775;
+    color: whitesmoke;
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Cantarell', sans-serif;
+}
+
+/* mobile styling */
+@media only screen and (max-width: 1000px) {
+    .post-list{
+        grid-template-columns: auto auto;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .post-list{
+        grid-template-columns: auto;
+    }
 }
