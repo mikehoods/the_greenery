@@ -32,4 +32,4 @@ class Post(models.Model):
         return self.body[:200] + '...'
 
     def get_absolute_url(self):
-        return reverse('blog-detail', args=(str(self.id)))
+        return reverse('blog-detail', args=(str(self.id),))

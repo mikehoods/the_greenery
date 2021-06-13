@@ -22,7 +22,7 @@ class AddPostView(CreateView):
     template_name = 'add_post.html'
     # fields = ('title', 'body')
 
-class AddCategotyView(CreateView):
+class AddCategoryView(CreateView):
     model = Category
     fields = '__all__'
     template_name = 'add_category.html'
