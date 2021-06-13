@@ -16,11 +16,14 @@ class Category(models.Model):
         return reverse('home')
 
 class Post(models.Model):
+    categories = Category.objects.all().values_list('name', 'name')
+
     title = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.CharField(max_length=255, choices=categories)
     body = models.TextField()
     date = models.DateField(auto_now_add=True)
-    category = models.CharField(max_length=255)
+    
 
     def __str__(self):
         return self.title + ' | ' + str(self.author)
