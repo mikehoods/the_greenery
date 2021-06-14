@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+    {% if category_posts %}
     <div class="post-list">
-        {% for post in object_list %}
+        <h1>{{ cat }}</h1>
+        {% for post in category_posts %}
         <div class="post-preview">
             <h1><a href="{% url 'blog-detail' post.pk %}">{{ post.title }}</a></h1>
             <p class="post-byline">By {{ post.author.first_name }} {{ post.author.last_name }}</p>
-            <p><a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a></p>
             <p class="post-snippet">{{ post.snippet }}</p>
             {% if user.is_authenticated %}
                 <div class="post-admin-links">
@@ -19,5 +19,8 @@
             </div>
         {% endfor %}
     </div>
-
+    {% else %}
+        <h1>Sorry, page not found.</h1>
+        <p><a href="{% url 'home'%}">Home</a></p>
+    {% endif %}
 {% endblock %}
