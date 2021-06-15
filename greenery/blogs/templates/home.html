@@ -10,10 +10,12 @@
             <p><a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a></p>
             <p class="post-snippet">{{ post.snippet }}</p>
             {% if user.is_authenticated %}
-                <div class="post-admin-links">
-                    <a href="{% url 'edit-post' post.pk %}">Edit</a>
-                    <a href="{% url 'delete-post' post.pk %}">Delete</a>
-                </div>
+                {% if user.id == post.author.id %}
+                    <div class="post-admin-links">
+                        <a href="{% url 'edit-post' post.pk %}">Edit</a>
+                        <a href="{% url 'delete-post' post.pk %}">Delete</a>
+                    </div>
+                {% endif %}
             {% endif %}    
             
             </div>

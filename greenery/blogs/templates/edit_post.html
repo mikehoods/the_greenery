@@ -3,13 +3,17 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-    <h1>Edit Post</h1>
-    <div class="post-form">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button>Edit Post</button>
-    </div>
+    {% if user.id == post.author.id %}
+        <h1>Edit Post</h1>
+        <div class="post-form">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Edit Post</button>
+        </div>
+    {% else %}
+    <h2>Unauthorized: Current user cannot edit this post.</h2>
+    {% endif %}
 {% else %}
     <h2>Unauthorized: Please login in to continue.</h2>
 {% endif %}

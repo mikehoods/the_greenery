@@ -14,6 +14,11 @@
             </div>
         </form>
     </div>
+
+    <script>
+        const name = "{{ user.id }}";
+        document.getElementById("id_author").value = name;
+    </script>
 {% else %}
     <h2>Unauthorized: Please login in to continue.</h2>
 {% endif %}

@@ -11,10 +11,12 @@
             <h3>{{ post.date }}</h3>
         </div>
         {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
         <div class="details-admin-links">
             <a href="{% url 'edit-post' post.pk %}">Edit</a> 
             <a href="{% url 'delete-post' post.pk %}">Delete</a>
         </div>
+        {% endif %}
         {% endif %}
     </div>
     <p class="post-body">{{ post.body|safe }}</p>
