@@ -11,6 +11,22 @@
             <h3>{{ post.date }}</h3>
         </div>
         {% if user.is_authenticated %}
+        <form action="{% url 'like_post' post.pk %}" method='POST'>
+            {% csrf_token %}
+            <button 
+                type="submit" 
+                name="post_id" 
+                value="{{ post.id }}"
+                {% if user in post.likes.all %}
+                    class="liked"
+                {% else %}
+                    class="unliked"
+                {% endif %}
+            >
+                {{ post.total_likes }}
+                <i class="fa fa-leaf"></i>
+            </button>
+        </form>
         {% if user.id == post.author.id %}
         <div class="details-admin-links">
             <a href="{% url 'edit-post' post.pk %}">Edit</a> 
