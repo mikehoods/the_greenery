@@ -134,6 +134,19 @@ header nav a:hover{
 .details-admin-links a:hover{
     text-decoration: underline;
 }
+.like-form{
+    text-align: center;
+}
+.like-form button{
+    border: none;
+    background-color: #8e9775;
+    color: #f9f9f9;
+    font-size: 18px;
+    padding: 8px;
+}
+.like-form .liked{
+    color: #181818;
+}
 
 /* forms styling */
 .post-form-div{
