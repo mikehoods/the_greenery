@@ -8,6 +8,7 @@
         <h1>Add Post</h1>
         <form class="post-form" method="POST">
             {% csrf_token %}
+            {{ form.media }}
             {{ form.as_p }}
             <div class="form-button-div">
                 <button class="form-button">Add Post</button>

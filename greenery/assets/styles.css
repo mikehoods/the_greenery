@@ -162,13 +162,21 @@ header nav a:hover{
 .post-form{
     width: 100%;
 }
-.post-form input, .post-form textarea, .post-form select{
+.post-form input, .post-form select, .django-ckeditor-widget, .post-form textarea{
     width: 100%;
-    padding: 4px;
     box-sizing: border-box;
+    font-size: 16px;
+}
+.post-form input, .post-form select, .post-form textarea{
+    padding: 4px;
     border-radius: 4px;
     border: 1px solid #8e9775;
-    font-size: 16px;
+}
+.post-form textarea{
+    resize: none;
+}
+.django-ckeditor-widget{
+    min-width: 100%;
 }
 .post-form .form-button-div{
     text-align: center;

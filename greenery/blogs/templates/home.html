@@ -8,7 +8,7 @@
             <h1><a href="{% url 'blog-detail' post.pk %}">{{ post.title }}</a></h1>
             <p class="post-byline">By {{ post.author.first_name }} {{ post.author.last_name }}</p>
             <p><a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a></p>
-            <p class="post-snippet">{{ post.snippet }}</p>
+            <p class="post-snippet">{{ post.snippet|safe }}</p>
             {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
                     <div class="post-admin-links">
