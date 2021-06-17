@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post, Category
 from .forms import PostForm
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator
 
 # def home(request):
 #     return render(request, 'home.html', {})
@@ -19,6 +20,7 @@ def LikeView(request, pk):
     return redirect('blog-detail', post.pk)
 
 class HomeView(ListView):
+    paginate_by = 6
     model = Post
     template_name = 'home.html'
     ordering = ['-date']

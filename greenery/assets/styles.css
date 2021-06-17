@@ -89,7 +89,6 @@ header nav a:hover{
     min-height: 100%;
     position: relative;
     box-sizing: border-box;
-    
 }
 .post-preview h1, .post-preview h2, .post-preview h3{
     margin: 0;
@@ -111,7 +110,10 @@ header nav a:hover{
 .post-preview .post-admin-links a:hover{
     text-decoration: underline;
 }
-
+.pagination{
+    text-align: center;
+    padding: 6px;
+}
 /* blog_details.html styling */
 .post-preview .post-body{
     padding: 10px;
