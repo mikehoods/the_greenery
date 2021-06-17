@@ -183,6 +183,49 @@ header nav a:hover{
     font-family: 'Cantarell', sans-serif;
 }
 
+/* Login / Register styling */
+.auth-h1{
+    text-align: center;
+}
+.auth-form{
+    display: flex;
+    justify-content: center;
+}
+.auth-form form{
+    min-width: 25vw;
+}
+.auth-form label{
+    display: block;
+}
+.auth-form form input{
+    padding: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #4a503d;
+}
+.auth-form .auth-button{
+    text-align: center;
+}
+.auth-form button{
+    border: none;
+    color: #181818;
+    background-color: #8e9775;
+    padding: 10px;
+    font-size: 18px;
+}
+.auth-form ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.helptext{
+    display: block;
+}
+.helptext, .auth-form li{
+    font-size: 12px;
+    color: #4a503d;
+}
+
 /* mobile styling */
 @media only screen and (max-width: 1000px) {
     .post-list{
