@@ -20,6 +20,7 @@ class Post(models.Model):
     categories = Category.objects.all().values_list('name', 'name')
 
     title = models.CharField(max_length=255)
+    header_image = models.ImageField(null=True, blank=True, upload_to="images")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=255, choices=categories)
     body = RichTextField(blank=True, null=True)

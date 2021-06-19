@@ -6,7 +6,7 @@
     
     <div class="post-form-div">
         <h1>Add Post</h1>
-        <form class="post-form" method="POST">
+        <form class="post-form" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.media }}
             {{ form.as_p }}
