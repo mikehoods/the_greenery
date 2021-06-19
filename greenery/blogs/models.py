@@ -20,7 +20,7 @@ class Post(models.Model):
     categories = Category.objects.all().values_list('name', 'name')
 
     title = models.CharField(max_length=255)
-    header_image = models.ImageField(null=True, blank=True, upload_to="images")
+    header_image = models.ImageField(null=True, blank=True, upload_to="images/posts")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=255, choices=categories)
     body = RichTextField(blank=True, null=True)
@@ -38,3 +38,13 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog-detail', args=(str(self.id),))
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio = models.TextField()
+    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/profile")
+    website_url = models.CharField(max_length=255, null=True, blank=True)
+    medium_url = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.user)

@@ -20,9 +20,20 @@
         {% endif %}
     </div>
     {% if post.header_image %}
-        <img src="{{ post.header_image.url }}" class="header-image">
+        <div class="header-image-div">
+            <img src="{{ post.header_image.url }}" class="header-image">
+        </div>   
     {% endif %}
     <p class="post-body">{{ post.body|safe }}</p>
+    <div class="author-details">
+        <div class="author-img-div">
+            <img src="{{ post.author.profile.profile_pic.url }}" class="profile-pic">
+        </div>
+        <div class="author-text-div">
+            <h2>{{ post.author.first_name }} {{ post.author.last_name }}</h2>
+            <p>{{ post.author.profile.bio }}</p>
+        </div>
+    </div>
     {% if user.is_authenticated %}
         <form action="{% url 'like_post' post.pk %}" method='POST' class="like-form">
             {% csrf_token %}
