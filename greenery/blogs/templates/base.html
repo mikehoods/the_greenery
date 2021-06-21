@@ -34,8 +34,13 @@
                     <a href="{% url 'add-post' %}">Add Post</a>
                     <a href="{% url 'add-category' %}">Add Category</a>
                     <a href="{% url 'edit-profile' %}">Edit Settings</a>
-                    <a href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
-                    <a href="{% url 'show-profile' user.profile.id %}">Contributer Profile</a>
+                    {% if user.profile.id %}
+                        <a href="{% url 'show-profile' user.profile.id %}">Contributer Profile</a>
+                        <a href="{% url 'edit-profile-page' user.profile.id %}">Edit Profile Page</a>
+                    {% else %}
+                        <a href="{% url 'create-profile-page' %}">Create Profile Page</a>
+                    {% endif %}
+                    
                 </div>
             </div>
                 <a href="{% url 'logout' %}">Logout</a>

@@ -5,9 +5,6 @@ from .forms import PostForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 
-# def home(request):
-#     return render(request, 'home.html', {})
-
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     liked = False
@@ -50,7 +47,6 @@ class AddPostView(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'add_post.html'
-    # fields = ('title', 'body')
 
 class AddCategoryView(CreateView):
     model = Category

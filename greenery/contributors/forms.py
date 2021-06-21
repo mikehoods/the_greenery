@@ -1,6 +1,12 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django import forms
+from blogs.models import Profile
+
+class ProfilePageForm(forms.ModelForm):
+    class Meta: 
+        model = Profile
+        fields = ('bio', 'profile_pic', 'website_url', 'medium_url')
 
 class SignupForm(UserCreationForm):
     email = forms.EmailField()
