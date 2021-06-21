@@ -279,6 +279,29 @@ header nav a:hover{
     }
 }
 @media only screen and (max-width: 750px) {
+    header h1{
+        margin: 0;
+    }
+    header h1 a{
+        font-size: 24px;
+    }
+    header .dropdown{
+        padding: 0px;
+    }
+    header .dropdown .dropbtn{
+        font-size: 14px;
+        padding: 10px;
+    }
+    nav a{
+        font-size: 14px;
+    }
+    header .dropdown-content{
+        min-width: 100px;
+    }
+    header .dropdown-content a{
+        font-size: 12px;
+        padding: 10px;
+    }
     .post-list{
         grid-template-columns: auto;
     }
