@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}The Greenery | Add Comment{% endblock %}
+{% block content %}
+    
+    <div class="post-form-div">
+        <h1>Add Post</h1>
+        <form class="post-form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-button-div">
+                <button class="form-button">Add Comment</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

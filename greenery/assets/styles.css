@@ -167,6 +167,20 @@ header nav a:hover{
     border-radius: 50%;
     margin-right: 10px;
 }
+.post-comments{
+    background-color: #e28f83;
+    margin: 12px 0;
+    padding: 10px;
+}
+.post-comments a{
+    color: #4a503d;
+    font-weight: 900;
+}
+.comment{
+    background-color: #f9f9f9;
+    margin: 12px;
+    padding: 10px;
+}
 
 /* forms styling */
 .post-form-div{
@@ -246,9 +260,16 @@ header nav a:hover{
 .helptext{
     display: block;
 }
+.helptext a{
+    color: #181818;
+    font-weight: 900;
+}
 .helptext, .auth-form li{
     font-size: 12px;
     color: #4a503d;
+}
+.login-input-div{
+    margin: 20px 0;
 }
 
 /* mobile styling */

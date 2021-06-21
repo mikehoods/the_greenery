@@ -5,7 +5,6 @@
 <h1 class="auth-h1">Edit Settings</h1>
 
 <div class="auth-form">
-    {{ user.profile.bio }}
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}

@@ -7,7 +7,14 @@
 <div class="auth-form">
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        <!-- {{ form.as_p }} -->
+        <div class="login-input-div">
+            <input type="text" class="form-input" name="username" placeholder="Username">
+        </div>
+        <div class="login-input-div">
+            <input type="password" class="form-input" name="password" placeholder="Password">
+        </div>
+        <p class="helptext">Not yet registered? Signup <a href="{% url 'register'%}">here...</a></p>
         <div class="auth-button">
             <button>Login</button> 
         </div>
